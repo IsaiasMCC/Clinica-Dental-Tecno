@@ -33,6 +33,8 @@ class AuthController extends Controller
         $nuevo_usuario = User::create([
             'name' => $request->nombre,
             'email' => $request->email,
+            'telefono' => $request->telefono,
+            'informacion' => $request->informacion,
             'password' => Hash::make($request->password),
         ]);
         return redirect()->route('auth.login');
