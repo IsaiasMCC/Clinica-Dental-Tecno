@@ -1,4 +1,8 @@
-@extends('layouts.myLayout')
+@extends('layouts.myCustonLayout')
+
+@section('title', 'home')
+
+@section('content_header', 'Home')
 
 @section('content')
 <div class="container">
