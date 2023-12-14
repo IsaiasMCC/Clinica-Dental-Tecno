@@ -52,8 +52,8 @@
                         <a href="#"><i class="fa fa-map"></i> <span class="nav-label">Roles Y Permisos</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="{{route('home')}}">Roles</a></li>
-                            <li><a href="#">Usuarios</a></li>
+                            <li><a href="{{ route('roles.index') }}">Roles</a></li>
+                            <li><a href="{{ route('usuarios.index') }}">Usuarios</a></li>
                         </ul>
                     </li>
                     <li>
@@ -141,7 +141,7 @@
 
 
     <!-- Mainly scripts -->
-    @yield('script')
+
 
 
     <script src="{!! asset('js/jquery-3.1.1.min.js') !!}"></script>
@@ -172,6 +172,8 @@
             });
         });
     </script>
+
+    @yield('script')
 
 </body>
 

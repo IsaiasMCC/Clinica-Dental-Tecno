@@ -12,7 +12,8 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::all();
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -20,7 +21,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create');
     }
 
     /**
@@ -28,7 +29,14 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'rol' => 'required'
+        ]);
+
+        $role = new Role();
+        $role->rol = $request->rol;
+        $role->save();
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -42,24 +50,30 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Role $role)
+    public function edit($id)
     {
-        //
+        $role = Role::find($id);
+        return view('roles.edit', compact('role'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Role $role)
+    public function update(Request $request, $id)
     {
-        //
+        $role = Role::find($id);
+        $role->rol = $request->rol;
+        $role->save();
+        return redirect()->route('roles.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Role $role)
+    public function destroy($id)
     {
-        //
+        $role = Role::find($id);
+        $role->delete();
+        return redirect()->route('roles.index');
     }
 }
