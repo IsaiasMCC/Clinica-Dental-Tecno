@@ -21,11 +21,11 @@ class Cita extends Model
 
     public function user_paciente()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class,'paciente');
     }
     public function user_odontologo()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class,'odontologo');
     }
     public function historiales()
     {

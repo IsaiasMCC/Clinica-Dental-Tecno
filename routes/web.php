@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CitaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -36,4 +38,12 @@ Route::get('roles/edit/{id}', [RoleController::class, 'edit'])->name('roles.edit
 Route::patch('roles/{id}', [RoleController::class, 'update'])->name('roles.update');
 Route::get('roles/delete/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');
 
+//USUARIOS
 Route::resource('usuarios', UserController::class);
+//CITAS
+Route::resource('citas', CitaController::class);
+//HISTORIALS
+Route::get('historials', [CitaController::class, 'historials'])->name('historials.index');
+Route::get('historials/filters', [CitaController::class, 'historialsFilters'])->name('historials.filters');
+//AGENDA
+Route::resource('agendas', AgendaController::class);

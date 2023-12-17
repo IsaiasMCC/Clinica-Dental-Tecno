@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenda;
+use App\Models\Cita;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
@@ -12,7 +14,10 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::join('usuario_roles', 'usuario_roles.user_id', 'users.id')
+        ->join('roles', 'roles.id', 'usuario_roles.rol_id')
+        ->where('roles.rol', 'Odontologo')->get(['users.id as id', 'name', 'email']);
+        return view('agendas.index', compact('users'));
     }
 
     /**
@@ -34,9 +39,11 @@ class AgendaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Agenda $agenda)
+    public function show(string $id)
     {
-        //
+        $odontologo = User::find($id);
+        $citas = Cita::where('odontologo', $id)->get(['id', 'fecha as start', 'motivo as title']);
+        return view('agendas.show', compact('citas', 'odontologo'));
     }
 
     /**
