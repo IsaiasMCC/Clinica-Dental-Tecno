@@ -24,7 +24,7 @@
 <body>
     <div id="wrapper">
 
-        <nav class="navbar-default navbar-static-side" role="navigation">
+        <nav class="navbar-default navbar-static-side" role="navigation" id="menu">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
@@ -32,9 +32,9 @@
                             <!-- <img alt="image" class="rounded-circle" src="img/profile_small.jpg" /> -->
                             <img alt="image" class="rounded-circle" src="{!! asset('img/profile_small.jpg') !!}" />
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="block m-t-xs font-bold">David Williams </span>
-                                <span class="text-muted text-xs block">Director de Parques y Jardines <b
-                                        class="caret"></b></span>
+                                <span class="block m-t-xs font-bold">Clinica Dental 🦷 </span>
+                                {{-- <span class="text-muted text-xs block">Director de Parques y Jardines <b
+                                        class="caret"></b></span> --}}
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a class="dropdown-item" href="profile.html">Profile</a></li>
@@ -60,8 +60,9 @@
                         <a href="#"><i class="fa fa-map"></i> <span class="nav-label">Agenda</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="{{route('home')}}">Cita</a></li>
-                            <li><a href="{{route('home')}}">Historial</a></li>
+                            <li><a href="{{route('citas.index')}}">Cita</a></li>
+                            <li><a href="{{route('historials.index')}}">Historial</a></li>
+                            <li><a href="{{route('agendas.index')}}">Agenda</a></li>
 
                         </ul>
                     </li>
@@ -136,7 +137,6 @@
             </div>
         </div>
 
-    </div>
     </div>
 
 
