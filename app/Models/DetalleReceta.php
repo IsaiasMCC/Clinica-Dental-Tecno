@@ -15,4 +15,9 @@ class DetalleReceta extends Model
         'cantidad',
         'receta_id',
     ];
+
+    public function medicamento()
+    {
+        return $this->belongsTo(Medicamento::class, 'medicamento_id');
+    }
 }
