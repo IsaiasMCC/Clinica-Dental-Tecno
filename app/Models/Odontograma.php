@@ -13,7 +13,7 @@ class Odontograma extends Model
         'fecha',
         'estado',
         'user_id',
-        'tratamiento_id',
+        'descripcion_tratamiento',
     ];
     public function dientes()
     {

@@ -72,7 +72,7 @@
                         <ul class="nav nav-second-level collapse">
                             <li><a href="{{route('home')}}">Cita</a></li>
                             <li><a href="{{route('home')}}">Historial</a></li>
-
+                            <li><a href="{{route('odontogramas.index_view')}}">Odonto</a></li>
                         </ul>
                     </li>
                     <li>

@@ -4,6 +4,8 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OdontogramaController;
+use App\Http\Controllers\OdontogramaTratamientoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -47,3 +49,10 @@ Route::get('historials', [CitaController::class, 'historials'])->name('historial
 Route::get('historials/filters', [CitaController::class, 'historialsFilters'])->name('historials.filters');
 //AGENDA
 Route::resource('agendas', AgendaController::class);
+//ODONTOGRAMA
+Route::get('odontogramas-index', [OdontogramaController::class, 'index'])->name('odontogramas.index_view');
+Route::get('odontogramas/{id}', [OdontogramaController::class, 'odontogramas'])->name('odontogramas.index');
+Route::get('odontograma-get-tratamiento/{id}', [OdontogramaTratamientoController::class, 'getOdontogramaTratamiento'])->name('odontograma.getTratamiento');
+Route::post('odontogramas', [OdontogramaController::class, 'store'])->name('odontogramas.store');
+Route::get('get-odontogramas/{id}', [OdontogramaController::class, 'getOdontogramas'])->name('odontogramas.show');
+Route::get('get-detalle-odontogramas/{id}', [OdontogramaController::class, 'getDetalleOdontograma'])->name('odontogramas.show_detalle');
