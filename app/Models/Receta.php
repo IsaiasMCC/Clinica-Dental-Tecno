@@ -13,4 +13,9 @@ class Receta extends Model
         'fecha',
         'tratamiento_id',
     ];
+
+    public function detalle_recetas()
+    {
+        return $this->hasMany(DetalleReceta::class);
+    }
 }
