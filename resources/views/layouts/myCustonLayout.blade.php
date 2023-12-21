@@ -79,9 +79,9 @@
                         <a href="#"><i class="fa fa-map"></i> <span class="nav-label">Tratamientos</span><span
                                 class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="{{route('home')}}">Recetas</a></li>
-
-
+                            <li><a href="{{route('tratamientos.index')}}">Tratamiento</a></li>
+                            <li><a href="{{route('tipotratamientos.index')}}">Tipo Tratamientos</a></li>
+                            <li><a href="{{route('medicamentos.index')}}">Medicamentos </a></li>
                         </ul>
                     </li>
                     <li>

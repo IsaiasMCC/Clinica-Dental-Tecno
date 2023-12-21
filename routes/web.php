@@ -6,8 +6,12 @@ use App\Http\Controllers\CitaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OdontogramaController;
 use App\Http\Controllers\OdontogramaTratamientoController;
+use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TipoTratamientoController;
+use App\Http\Controllers\TratamientoController;
 use App\Http\Controllers\UserController;
+use App\Models\TipoTratamiento;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,3 +60,10 @@ Route::get('odontograma-get-tratamiento/{id}', [OdontogramaTratamientoController
 Route::post('odontogramas', [OdontogramaController::class, 'store'])->name('odontogramas.store');
 Route::get('get-odontogramas/{id}', [OdontogramaController::class, 'getOdontogramas'])->name('odontogramas.show');
 Route::get('get-detalle-odontogramas/{id}', [OdontogramaController::class, 'getDetalleOdontograma'])->name('odontogramas.show_detalle');
+//Tratamientos
+Route::resource('tratamientos', TratamientoController::class);
+Route::post('tratamientos/agregarMedicamento', [TratamientoController::class, 'agregarMedicamento'])->name('tratamientos.agregarMedicamento');
+//TIPOTRATAMIENTO
+Route::resource('tipotratamientos', TipoTratamientoController::class);
+//MEDICAMENTOS
+Route::resource('medicamentos', MedicamentoController::class);
