@@ -11,21 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('odontogramas', function (Blueprint $table) {
+        Schema::create('detalle_odontogramas', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha');
-            $table->boolean('estado');
-            $table->string('descripcion_tratamiento')->nullable();
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('diente_id')->unsigned();
+            $table->bigInteger('odontograma_tratamiento_id')->unsigned();
+            $table->bigInteger('odontograma_id')->unsigned();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('odontogramas');
+        Schema::dropIfExists('detalle_odontogramas');
     }
 };

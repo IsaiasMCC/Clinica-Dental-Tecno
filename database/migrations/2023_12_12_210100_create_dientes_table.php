@@ -16,8 +16,9 @@ return new class extends Migration
             $table->integer('numero_diente');
             $table->integer('cuadrante');
             $table->string('nombre_cuadrante');
-            $table->boolean('estado');
-            $table->bigInteger('odontograma_id')->unsigned();
+            $table->string('nombre_diente');
+            // $table->boolean('estado');
+            // $table->bigInteger('odontograma_id')->unsigned();
             $table->timestamps();
         });
     }

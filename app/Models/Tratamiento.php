@@ -11,7 +11,6 @@ class Tratamiento extends Model
     protected $table = 'tratamientos';
     protected $fillable = [
         'descripcion',
-        'estado',
         'cita_id',
         'tipo_tratamiento_id'
     ];
