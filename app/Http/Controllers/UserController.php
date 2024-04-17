@@ -35,6 +35,7 @@ class UserController extends Controller
         $validate = $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'phone' => 'required',
             'password' => 'required',
             'rol' => 'required'
         ]);
@@ -43,6 +44,8 @@ class UserController extends Controller
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
+            $user->telefono = $request->phone;
+            $user->informacion = "";
             $user->password = $request->password;
             $user->save();
 

@@ -22,6 +22,9 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Nombre Rol</label>
               <input type="text" class="form-control" id="rol" aria-describedby="rol" name="rol">
+               @error('rol')
+                <p class="text-danger"> Campo rol obligatorio</p>
+               @enderror
             </div>
 
             <a href="{{ route('roles.index') }}" type="button"  class="btn btn-secondary">Cancelar</a>
